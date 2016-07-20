@@ -9,3 +9,5 @@ version          '0.0.4'
 %w{ ubuntu debian centos redhat fedora amazon}.each do |os|
   supports os
 end
+
+recipe 'cloudwatch-logs::default', 'installs and configures cloudwatch'
