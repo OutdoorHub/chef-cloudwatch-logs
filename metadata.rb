@@ -11,3 +11,10 @@ version          '0.0.4'
 end
 
 recipe 'cloudwatch-logs::default', 'installs and configures cloudwatch'
+
+
+attribute 'cwlogs/deployment',
+  :display_name => 'Deployment Name'
+
+attribute 'cwlogs/hostname',
+  :display_name => 'Hostname'

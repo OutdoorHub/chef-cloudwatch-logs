@@ -2,7 +2,10 @@ default['cwlogs']['region'] = 'us-east-1'
 default['cwlogs']['state_file_dir'] = '/var/awslogs/state'
 default['cwlogs']['state_file_name'] = 'agent-state'
 default['cwlogs']['logfiles'] = [
-  '/var/log/messages',
-  '/var/log/httpd/access_log',
-  '/var/log/httpd/error_log'
+  node['cwlogs']['deployment'] = [
+    'datetime_format' => '[%Y-%m-%d %H:%M:%S]',
+    'log_group_name' => node['cwlogs']['deployment'],
+    'file' => '/var/log/messages',
+    'log_stream_name' => "#{node['cwlogs']['hostname']}-var-log-messages"
+  ]
 ]
