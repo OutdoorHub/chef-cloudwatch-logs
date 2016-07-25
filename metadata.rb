@@ -14,7 +14,9 @@ recipe 'cloudwatch-logs::default', 'installs and configures cloudwatch'
 
 
 attribute 'cwlogs/deployment',
-  :display_name => 'Deployment Name'
+  :display_name => 'Deployment Name',
+  :required => "required"
 
 attribute 'cwlogs/hostname',
-  :display_name => 'Hostname'
+  :display_name => 'Hostname',
+  :required => "required"
